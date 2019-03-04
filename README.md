@@ -3,7 +3,7 @@ Test project with influxdb, typescript and node
 
 InfluxDB https://docs.influxdata.com/influxdb/v1.7/
 
-##Install influxDB 
+### Install influxDB 
 How to install https://docs.influxdata.com/influxdb/v1.7/introduction/installation/
 
 ```console
@@ -23,7 +23,7 @@ https://www.npmjs.com/package/supertest-as-promised
 https://mherman.org/blog/building-a-restful-api-with-node-and-flow/
 https://medium.com/@ryanblahnik/setting-up-testing-with-jest-and-node-js-b793f1b5621e
 
-##Running influx
+### Running influx
 Start server
 ```console
 $ sudo influxd run
