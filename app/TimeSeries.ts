@@ -1,6 +1,4 @@
 import Influx = require('influx');
-import { resolve } from 'dns';
-import { rejects } from 'assert';
 
 export class TimeSeries {
     influx: Influx.InfluxDB;

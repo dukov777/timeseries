@@ -6,8 +6,8 @@
   "scripts": {
     "tsc": "tsc",
     "dev": "ts-node-dev --respawn --transpileOnly ./app/app.ts",
-    "prod": "tsc && node ./build/app.js",
-    "test": "jest"
+    "prod": "tsc && node ./build/app/app.js",
+    "test": "jest --env=node --colors --coverage test"
   },
   "author": "",
   "license": "ISC",
