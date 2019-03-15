@@ -46,3 +46,36 @@ Delete all measurements for `temp` timeserie
 ```console
 > drop measurement temp
 ```
+
+How to install
+```console
+git clone <this repo>
+npm install
+```
+Run server
+```console
+npm run prod
+```
+
+Run tests against server
+```console
+npm run test
+```
+
+OR 
+curl to write record into DB
+```console
+curl --header "Content-Type: application/json" --request POST --data '{"origin":"XYZ","value":"1"}' http://localhost:3000/temp
+```
+Read a record
+```console
+curl http://localhost:3000/origin/XYZ
+```
+Or read all records
+Read a record
+```console
+curl http://localhost:3000/times
+```
+
+
+
