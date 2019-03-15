@@ -1,4 +1,4 @@
-# timeseries
+# TimeSeries With influxDB, node and Typescript
 Test project with influxdb, typescript and node
 
 InfluxDB https://docs.influxdata.com/influxdb/v1.7/
@@ -23,30 +23,37 @@ https://www.npmjs.com/package/supertest-as-promised
 https://mherman.org/blog/building-a-restful-api-with-node-and-flow/
 https://medium.com/@ryanblahnik/setting-up-testing-with-jest-and-node-js-b793f1b5621e
 
-### Running influx
+### Running influx Server
 Start server
 ```console
-$ sudo influxd run
+sudo influxd run
 ```
+
+### Create manualy the DB and log atleast one record
 
 Connect to server
 ```console
-$ influx -precision rfc3339 
-> create database mybd
-> use mybd
+influx -precision rfc3339 
+```
+
+Create database and start use it.
+```sql
+create database mybd
+use mybd
 ```
 
 Add one measurement in temp timeserie
-```console
-> INSERT temp,origin=sofia value=0
-> select * from temp
+```sql
+insert temp,origin=sofia value=0
+select * from temp
 ```
-
+Add one measurement in temp timeserie
 Delete all measurements for `temp` timeserie
-```console
-> drop measurement temp
+```sql
+drop measurement temp
 ```
 
+### Start working with code
 How to install
 ```console
 git clone <this repo>
@@ -62,7 +69,8 @@ Run tests against server
 npm run test
 ```
 
-OR 
+You could play around with curl
+
 curl to write record into DB
 ```console
 curl --header "Content-Type: application/json" --request POST --data '{"origin":"XYZ","value":"1"}' http://localhost:3000/temp
